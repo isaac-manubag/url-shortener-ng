@@ -1,22 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './banner/banner.component';
 import { ShortenerComponent } from './shortener/shortener.component';
+import { HomeComponent } from './pages/home/home.component';
+import { TermsComponent } from './pages/terms/terms.component';
+import { ContactComponent } from './pages/contact/contact.component';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'terms-of-user', component: TermsComponent },
+  { path: 'contact-us', component: ContactComponent },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BannerComponent,
-    ShortenerComponent
+    ShortenerComponent,
+    HomeComponent,
+    TermsComponent,
+    ContactComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
