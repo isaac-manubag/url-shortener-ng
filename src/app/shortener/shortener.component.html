@@ -7,9 +7,15 @@
           class="form-control"
           placeholder="Enter URL"
           required
+          [(ngModel)]="url"
+          name="url"
         />
         <div class="input-group-append">
-          <button class="button button-shadow2" type="submit">
+          <button
+            class="button button-shadow2"
+            type="button"
+            (click)="shortenUrl()"
+          >
             Shorten
           </button>
         </div>
