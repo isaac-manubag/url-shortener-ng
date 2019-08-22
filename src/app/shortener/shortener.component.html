@@ -23,3 +23,14 @@
     </form>
   </div>
 </section>
+<div class="url-container">
+  <div class="url-container--item" *ngFor="let shortenedUrl of shortenedUrlArray" >
+      <div class="links">
+        <p>{{ shortenedUrl.longurl }}</p>
+        <a target="_blank" href="{{ apiUrl }}/u/{{ shortenedUrl.shorturl }}">
+          {{ apiUrl }}/u/{{ shortenedUrl.shorturl }}
+        </a>
+      </div>
+      <button class="button button-shadow2" ngxClipboard [cbContent]="apiUrl+'/u/'+shortenedUrl.shorturl">Copy</button>
+  </div>
+</div>

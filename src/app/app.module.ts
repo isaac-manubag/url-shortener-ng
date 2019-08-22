@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { ClipboardModule } from 'ngx-clipboard';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './banner/banner.component';
@@ -33,6 +33,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule,
+    ClipboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

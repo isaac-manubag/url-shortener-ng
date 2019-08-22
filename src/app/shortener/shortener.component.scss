@@ -1,0 +1,25 @@
+.url-container {
+  display: flex;
+  flex-direction: column;
+
+  &--item {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-self: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid #2e26a2;
+    margin-top: 1rem;
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      p, a {
+        margin: 0;
+      }
+    }
+  }
+}

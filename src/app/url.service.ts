@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from './../environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -7,11 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class UrlService {
   constructor(private http: HttpClient) {}
 
-  shortenUrl(url) {
-    return this.http
-      .get(`http://localhost:3000/shorten?url=${url}`)
-      .subscribe(data => {
-        console.log('response data', data);
-      });
+  shortenUrl(url: string) {
+    return this.http.get(`${environment.apiUrl}/shorten?url=${url}`);
   }
 }

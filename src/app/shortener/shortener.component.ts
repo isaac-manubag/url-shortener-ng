@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UrlService } from '../url.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-shortener',
@@ -7,12 +8,17 @@ import { UrlService } from '../url.service';
   styleUrls: ['./shortener.component.scss'],
 })
 export class ShortenerComponent {
-  url = '';
+  url = 'https://platform.cloudways.com/apps/535374/deployment';
   shortenedUrl = {};
+  shortenedUrlArray = [];
+  apiUrl = environment.apiUrl;
 
   constructor(private urlService: UrlService) {}
 
   shortenUrl() {
-    this.urlService.shortenUrl(this.url);
+    this.urlService.shortenUrl(this.url).subscribe(data => {
+      this.shortenedUrl = data;
+      this.shortenedUrlArray.unshift(data);
+    });
   }
 }
