@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UrlService } from '../url.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { UrlService } from '../url.service';
   templateUrl: './shortener.component.html',
   styleUrls: ['./shortener.component.scss'],
 })
-export class ShortenerComponent implements OnInit {
+export class ShortenerComponent {
   url = '';
   shortenedUrl = {};
 
