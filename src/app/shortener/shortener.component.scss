@@ -1,9 +1,14 @@
+.alert-danger {
+  margin: 1rem 0;
+}
+
 .url-container {
   display: flex;
   flex-direction: column;
 
   &--item {
     display: flex;
+    transition: visibility 0s, opacity 0.5s linear;
     flex-direction: row;
     width: 80%;
     align-self: center;
@@ -17,7 +22,8 @@
       flex-direction: column;
       flex: 1;
 
-      p, a {
+      p,
+      a {
         margin: 0;
       }
     }
