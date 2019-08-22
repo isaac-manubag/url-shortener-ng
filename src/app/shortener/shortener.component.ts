@@ -26,7 +26,7 @@ import { environment } from '../../environments/environment';
   ],
 })
 export class ShortenerComponent implements OnInit {
-  url = 'https://platform.cloudways.com/apps/535374/deployment';
+  url = '';
   shortenedUrl = {};
   shortenedUrlArray = [];
   apiUrl = environment.apiUrl;
