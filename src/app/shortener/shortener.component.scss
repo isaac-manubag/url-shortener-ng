@@ -9,13 +9,18 @@
   &--item {
     display: flex;
     transition: visibility 0s, opacity 0.5s linear;
-    flex-direction: row;
+    flex-direction: column;
     width: 80%;
     align-self: center;
     padding: 1rem;
     border-radius: 1rem;
     border: 1px solid #2e26a2;
     margin-top: 1rem;
+    word-break: break-all;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+    }
 
     .links {
       display: flex;
@@ -26,6 +31,11 @@
       a {
         margin: 0;
       }
+    }
+
+    button {
+      max-height: 45px;
+      align-self: center;
     }
   }
 }

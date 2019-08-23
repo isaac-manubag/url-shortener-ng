@@ -35,7 +35,11 @@ export class ShortenerComponent implements OnInit {
 
   constructor(private urlService: UrlService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (localStorage.getItem('sacly_items')) {
+      this.shortenedUrlArray = JSON.parse(localStorage.getItem('sacly_items'));
+    }
+  }
 
   shortenUrl() {
     this.urlService.shortenUrl(this.url).subscribe(
@@ -44,6 +48,11 @@ export class ShortenerComponent implements OnInit {
         this.shortenUrlErrorMsg = '';
         this.shortenedUrl = data;
         this.shortenedUrlArray.unshift(data);
+        this.shortenedUrlArray = this.shortenedUrlArray.slice(0, 3);
+        localStorage.setItem(
+          'sacly_items',
+          JSON.stringify(this.shortenedUrlArray),
+        );
       },
       err => {
         this.shortenUrlError = true;
